@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Lib\Hoge;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    // not class Lib\Hoge の場合は、 make cache で dump-autoload の実行を試みる
+    new Hoge();
     return view('welcome');
 });
